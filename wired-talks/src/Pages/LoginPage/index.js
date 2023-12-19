@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { BodyBox, LoginBox } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 import { Typography, Button, TextField } from "@mui/material";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,6 +22,8 @@ const HomePage = () => {
     // Aqui você pode lidar com a submissão do formulário usando os valores de email e senha
     console.log("Email:", email);
     console.log("Senha:", password);
+
+    navigate("/chat")
   };
 
   return (
